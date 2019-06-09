@@ -1,3 +1,7 @@
+# conan folders
+source_subfolder/
+build_subfolder/
+
 # Compiled Object files
 *.slo
 *.lo

@@ -1,0 +1,31 @@
+From 5277e0db73d8920166df5c9874a0ad25176b9013 Mon Sep 17 00:00:00 2001
+From: Thales <tluisrs@gmail.com>
+Date: Sun, 9 Jun 2019 22:50:41 +0100
+Subject: [PATCH] Fix Windows install directories
+
+---
+ CMakeLists.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f92ecf8..1c19cca 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -154,10 +154,10 @@ else()
+     # Install into local directory
+     set(INSTALL_ROOT      ".")                      # ./
+     set(INSTALL_CMAKE     "cmake")                  # ./cmake
+-    set(INSTALL_EXAMPLES  ".")                      # ./
+-    set(INSTALL_DATA      ".")                      # ./
+-    set(INSTALL_BIN       ".")                      # ./
+-    set(INSTALL_SHARED    "lib")                    # ./lib
++    set(INSTALL_EXAMPLES  "examples")               # ./
++    set(INSTALL_DATA      "examples")               # ./
++    set(INSTALL_BIN       "bin")                    # ./
++    set(INSTALL_SHARED    "bin")                    # ./lib
+     set(INSTALL_LIB       "lib")                    # ./lib
+     set(INSTALL_INCLUDE   "include")                # ./include
+     set(INSTALL_DOC       "doc")                    # ./doc
+-- 
+2.22.0.windows.1
+
