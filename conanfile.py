@@ -32,6 +32,7 @@ class GLBindingConan(ConanFile):
     patches = [
         "0001-Fix-Windows-install-directories.patch"
     ]
+    exports_sources = [] + patches
 
     # Custom attributes for Bincrafters recipe conventions
     _source_subfolder = "source_subfolder"
@@ -56,7 +57,7 @@ class GLBindingConan(ConanFile):
         cmake = CMake(self)
         cmake.definitions["OPTION_BUILD_EXAMPLES"] = False
         cmake.definitions["OPTION_BUILD_TOOLS"] = False
-        cmake.configure(build_folder=self._build_subfolder)
+        cmake.configure(source_folder=self._source_subfolder, build_folder=self._build_subfolder)
         return cmake
 
     def build(self):
